@@ -16,7 +16,8 @@ public class WordCount {
             String line = value.toString();
             StringTokenizer tokenizer = new StringTokenizer(line.toLowerCase().replaceAll("[^a-zA-Z]+","\n"));
             while (tokenizer.hasMoreTokens()) {
-                word.set(tokenizer.nextToken().replaceAll("[^a-zA-Z]+",""));
+		String first = String.valueOf(tokenizer.nextToken().replaceAll("[^a-zA-Z]+","").charAt(0));
+                word.set(first);
                 output.collect(word, one);
             }
         }
